@@ -16,7 +16,7 @@ exports.xkcd = {
 			try {
 				var comic = JSON.parse(body);
 				cb({embed: {
-					color: Kirbi.Config.defaultEmbedColor,
+					color: Kirbi.Config.discord.defaultEmbedColor,
 					title: `XKCD ${comic.num} ${comic.title}`,
 					image: {
 						url: comic.img
