@@ -24,9 +24,9 @@ exports.xkcd = {
 					footer: {
 						text: comic.alt
 					}
-				}});
+				}}, msg);
 			} catch (err) {
-				cb(`Couldn't fetch an XKCD for ${suffix}`);
+				cb(`Couldn't fetch an XKCD for ${suffix}`, msg);
 			}
 		});
 	}
@@ -37,6 +37,6 @@ exports.highnoon = {
 		require('request')({
 			uri: "http://imgs.xkcd.com/comics/now.png",
 			followAllRedirects: true
-		}, (err, resp, body) => cb({embed: { image: {url: resp.request.uri.href}}}));
+		}, (err, resp, body) => cb({embed: { image: {url: resp.request.uri.href}}}, msg));
 	}
 }
