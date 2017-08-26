@@ -1,14 +1,32 @@
 {
-	"author": "Nate Richardson <hello@naterichardson.com> (https://naterichardson.com)",
-	"dependencies": {},
-	"description": "adds the !xkcd command to Kirbi",
-	"devDependencies": {},
-	"license": "Apache-2.0",
 	"name": "kirbi-xkcd",
+	"description": "adds the !xkcd command to Kirbi",
+	"version": "0.1.0",
+	"license": "Apache-2.0",
+	"readme": "README.md",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Richardson-Media-House/kirbi-xkcd.git"
 	},
-	"version": "0.0.1",
-	"main": "xkcd.js"
+	"author": "Nate Richardson <hello@naterichardson.com> (https://naterichardson.com)",
+	"contributors": [
+		"Matt Carroll <admin@develogix.com> (https://develogix.com)",
+		"Joseph Moran III <joseph.moraniii@gmail.com> (https://josephmoran.co)"
+	],
+	"main": "xkcd.js",
+	"dependencies": {},
+	"devDependencies": {
+		"xo": "^0.18.2"
+	},
+	"xo": {
+		"rules": {
+			"linebreak-style": ["error", "windows"],
+			"no-prototype-builtins": "warn",
+			"radix": "warn",
+			"guard-for-in": "warn"
+		}
+	},
+	"scripts": {
+		"test": "xo"
+	}
 }
