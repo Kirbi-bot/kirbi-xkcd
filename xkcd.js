@@ -1,4 +1,4 @@
-module.exports = function (config, auth) {
+module.exports = function (Kirbi) {
 	return {
 		commands: [
 			'xkcd',
@@ -15,7 +15,7 @@ module.exports = function (config, auth) {
 					try {
 						var comic = JSON.parse(body);
 						cb({embed: {
-							color: config.discord.defaultEmbedColor,
+							color: Kirbi.Config.discord.defaultEmbedColor,
 							title: `XKCD ${comic.num} ${comic.title}`,
 							image: {
 								url: comic.img
