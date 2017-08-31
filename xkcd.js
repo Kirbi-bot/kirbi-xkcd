@@ -15,8 +15,8 @@ module.exports = function (Kirbi) {
 				url += 'info.0.json';
 				require('request')(url, (err, res, body) => {
 					try {
-						let comic = JSON.parse(body);
-						cb({embed: {
+						const comic = JSON.parse(body);
+						cb({ embed: {
 							color: Kirbi.Config.discord.defaultEmbedColor,
 							title: `XKCD ${comic.num} ${comic.title}`,
 							image: {
@@ -25,7 +25,7 @@ module.exports = function (Kirbi) {
 							footer: {
 								text: comic.alt
 							}
-						}}, msg);
+						} }, msg);
 					} catch (err) {
 						cb(`Couldn't fetch an XKCD for ${suffix}`, msg);
 					}
@@ -37,7 +37,7 @@ module.exports = function (Kirbi) {
 				require('request')({
 					uri: 'http://imgs.xkcd.com/comics/now.png',
 					followAllRedirects: true
-				}, (err, resp) => cb({embed: {image: {url: resp.request.uri.href}}}, msg));
+				}, (err, resp) => cb({ embed: { image: { url: resp.request.uri.href } } }, msg));
 			}
 		}
 	};
