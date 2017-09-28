@@ -1,4 +1,4 @@
-module.exports = function (Kirbi) {
+module.exports = Kirbi => {
 	return {
 		commands: [
 			'xkcd',
@@ -16,16 +16,18 @@ module.exports = function (Kirbi) {
 				require('request')(url, (err, res, body) => {
 					try {
 						const comic = JSON.parse(body);
-						cb({ embed: {
-							color: Kirbi.Config.discord.defaultEmbedColor,
-							title: `XKCD ${comic.num} ${comic.title}`,
-							image: {
-								url: comic.img
-							},
-							footer: {
-								text: comic.alt
+						cb({
+							embed: {
+								color: Kirbi.Config.discord.defaultEmbedColor,
+								title: `XKCD ${comic.num} ${comic.title}`,
+								image: {
+									url: comic.img
+								},
+								footer: {
+									text: comic.alt
+								}
 							}
-						} }, msg);
+						}, msg);
 					} catch (err) {
 						cb(`Couldn't fetch an XKCD for ${suffix}`, msg);
 					}
